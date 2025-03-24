@@ -1,0 +1,24 @@
+/* src/styles/custom.css */
+.hero-glow {
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+  
+  @keyframes glowPulse {
+    0%, 100% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #7c3aed, 0 0 30px #6366f1;
+    }
+    50% {
+      text-shadow: 0 0 20px #fff, 0 0 30px #7c3aed, 0 0 40px #6366f1;
+    }
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5), 0 0 40px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .input-focus:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  }
+  

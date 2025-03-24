@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Creation - UI/UX Design Studio</title>
+   <style>
+    :root {
+            --bg-color-light: #ffffff;
+            --text-color-light: #000000;
+            --secondary-bg-light: #f5f5f5;
+
+            --bg-color-dark: #0f0f0f;
+            --text-color-dark: #ffffff;
+            --secondary-bg-dark: #1a1a1a;
+
+            --primary-color: #d4c188;
+        }
+
+        body.light-theme {
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+
+        body.dark-theme {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            transition: background-color 0.3s ease;
+        }
+
+        body.light-theme header {
+            background-color: var(--secondary-bg-light);
+        }
+
+        body.dark-theme header {
+            background-color: var(--secondary-bg-dark);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            transform: scale(1.05);
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            background: var(--primary-color);
+            color: #000;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: #000;
+            color: var(--primary-color);
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0f0f0f;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            transition: background-color 0.3s ease;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4c188;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.1);
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        nav a {
+            color: #d4c188;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #fff;
+            transform: scale(1.05);
+        }
+        .hero {
+            background: linear-gradient(145deg, #111111, #292929);
+            padding: 80px 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 36px;
+            color: #f0e6c0;
+            transition: transform 0.3s ease;
+        }
+        .hero h1:hover {
+            transform: scale(1.05);
+        }
+        .hero p {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            padding: 60px 20px;
+            gap: 30px;
+        }
+        .service-card {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid #d4c18844;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+        .service-card h3 {
+            color: #d4c188;
+            margin-bottom: 10px;
+        }
+        .testimonials {
+            background-color: #1a1a1a;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .testimonials h2 {
+            color: #f0e6c0;
+            margin-bottom: 30px;
+        }
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background-color: #222;
+            padding: 30px;
+            border-radius: 12px;
+            color: #ddd;
+            border: 1px solid #d4c18833;
+            transition: transform 0.3s ease;
+        }
+        .testimonial:hover {
+            transform: scale(1.02);
+        }
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .testimonial span {
+            display: block;
+            margin-top: 10px;
+            color: #d4c188;
+            font-weight: bold;
+        }
+        .about {
+            background-color: #0f0f0f;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .about h2 {
+            color: #f0e6c0;
+            margin-bottom: 20px;
+        }
+        .about p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        .team {
+            background-color: #1a1a1a;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .team h2 {
+            color: #f0e6c0;
+            margin-bottom: 30px;
+        }
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .team-member {
+            background-color: #222;
+            border: 1px solid #d4c18833;
+            border-radius: 12px;
+            padding: 20px;
+            width: 100%;
+            max-width: 250px;
+            color: #ddd;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .team-member h4 {
+            color: #d4c188;
+            margin-bottom: 5px;
+        }
+        .team-member p {
+            font-size: 14px;
+            color: #bbb;
+        }
+        .team-member a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #d4c188;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .team-member a:hover {
+            color: #fff;
+        }
+        .contact {
+            background-color: #0f0f0f;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .contact h2 {
+            color: #f0e6c0;
+            margin-bottom: 20px;
+        }
+        .contact p {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+        .contact-info {
+            color: #d4c188;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #121212;
+            text-align: center;
+            padding: 30px 20px;
+            color: #aaa;
+            font-size: 14px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p, .about p, .contact p {
+                font-size: 16px;
+            }
+            nav {
+                justify-content: center;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .team-member {
+                width: 100%;
+            }
+        }
+        :root {
+            --primary-color: #d4c188;
+            --bg-color: #ffffff;
+            --text-color: #000000;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #d4c188;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            transform: scale(1.05);
+        }
+
+        .team-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #1a1a1a;
+        }
+
+        .team-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .team-member {
+            width: 250px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-info h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .member-info p {
+            margin: 5px 0 10px;
+            font-size: 14px;
+            color: #1a1a1a;;
+        }
+
+        .social-links a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .team-member {
+                width: 80%;
+            }
+        }
+    </style>
+    <script>
+        function setTheme(theme) {
+            document.body.className = theme + '-theme';
+            localStorage.setItem('theme', theme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        }
+
+        window.onload = function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="logo">Nova Creation</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#about">About</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Crafting Exceptional UI/UX Designs</h1>
+        <p>We transform ideas into visually appealing and user-friendly interfaces that enhance the digital experience.</p>
+    </section>
+
+    <section id="services" class="services">
+        <div class="service-card">
+            <h3>UI Design</h3>
+            <p>Modern and aesthetic user interface design that aligns with your brand identity.</p>
+        </div>
+        <div class="service-card">
+            <h3>UX Research</h3>
+            <p>Data-driven insights to ensure intuitive and delightful user experiences.</p>
+        </div>
+        <div class="service-card">
+            <h3>Prototyping</h3>
+            <p>Interactive prototypes to visualize and test your product before development.</p>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"Nova Creation truly understands the essence of design. Their UI/UX work significantly improved our app's user engagement."</p>
+            <span>- Sarah D., Product Manager</span>
+        </div>
+        <div class="testimonial">
+            <p>"Professional, creative, and detail-oriented — working with Nova Creation was a pleasure. Highly recommended!"</p>
+            <span>- Rahul M., Startup Founder</span>
+        </div>
+        <div class="testimonial">
+            <p>"Their design skills are top-notch, and they delivered everything on time. We will definitely collaborate again."</p>
+            <span>- Aisha K., Marketing Head</span>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Nova Creation is a passionate team of UI/UX designers committed to bringing intuitive and aesthetic design solutions to life. Our mission is to help brands communicate their story through visually engaging and user-centered interfaces. With a blend of creativity, strategy, and innovation, we create digital experiences that are not only functional but also delightful. Whether you're a startup or an established enterprise, we work closely with you to elevate your digital presence.</p>
+    </section>
+
+    <section id="team" class="team-section">
+      <h2>Meet Our Team</h2>
+      <div class="team-container">
+          <div class="team-member">
+              <img src="ceo.jpg" alt="Team Member" class="member-photo">
+              <div class="member-info">
+                  <h3>Manav Patel</h3>
+                  <p> Co-Founder | UI/UX Designer</p>
+                  <div class="social-links">
+                      <a href="https://www.linkedin.com/in/manav-patel-584a6226b/">LinkedIn</a>
+                      <!-- <a href="#" target="_blank">Instagram</a> -->
+                  </div>
+              </div>
+          </div>
+          <div class="team-member">
+              <img src="cto.jpg" alt="Team Member" class="member-photo">
+              <div class="member-info">
+                  <h3>Smit Rana </h3>
+                  <p>Frontend Developer</p>
+                  <div class="social-links">
+                      <a href="https://www.linkedin.com/in/smit-rana-2094a2239/">LinkedIn</a>
+                      <!-- <a href="#" target="_blank">Instagram</a> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Let's collaborate and create exceptional digital experiences. Reach out to us via email or phone.</p>
+        <div class="contact-info">
+            <p>Email: novacreations2025@gmail.com</p>
+            <p>Phone: +91 95747 47010</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Nova Creation | All Rights Reserved
+    </footer>
+</body>
+</html>
